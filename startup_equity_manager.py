@@ -1277,7 +1277,8 @@ def tabla_resumen_section():
     # Calcular métricas de resumen
     total_socios = len(df)
     total_equity = (df['acciones_ordinarias'] + df['acciones_preferenciales'] + df['stock_options'] +
-                   df.get('phantom_equity', 0) + df.get('acciones_vesting', 0)).sum()
+                   (df['phantom_equity'] if 'phantom_equity' in df.columns else 0) +
+                   (df['acciones_vesting'] if 'acciones_vesting' in df.columns else 0)).sum()
     equity_disponible = 100 - total_equity
     total_aportes = df['aporte_inicial'].sum()
     total_salarios = df['salario'].sum()
@@ -1420,8 +1421,8 @@ def tabla_ejecutiva(df, mostrar_proteccion):
         df['acciones_ordinarias'] +
         df['acciones_preferenciales'] +
         df['stock_options'] +
-        df.get('phantom_equity', 0) +
-        df.get('acciones_vesting', 0)
+        (df['phantom_equity'] if 'phantom_equity' in df.columns else 0) +
+        (df['acciones_vesting'] if 'acciones_vesting' in df.columns else 0)
     ).round(1)
 
     # Mostrar tipo principal de equity
@@ -1461,13 +1462,13 @@ def tabla_resumida(df, mostrar_proteccion):
     """Vista resumida con información esencial"""
     tabla_res = df[['nombre', 'categoria', 'dedicacion']].copy()
     tabla_res['Ordinarias %'] = df['acciones_ordinarias'].round(1)
-    tabla_res['Phantom %'] = df.get('phantom_equity', 0).round(1)
-    tabla_res['Profit Share %'] = df.get('profit_sharing', 0).round(1)
+    tabla_res['Phantom %'] = df['phantom_equity'].round(1) if 'phantom_equity' in df.columns else 0
+    tabla_res['Profit Share %'] = df['profit_sharing'].round(1) if 'profit_sharing' in df.columns else 0
     tabla_res['Total %'] = (df['acciones_ordinarias'] +
                            df['acciones_preferenciales'] +
                            df['stock_options'] +
-                           df.get('phantom_equity', 0) +
-                           df.get('acciones_vesting', 0)).round(1)
+                           (df['phantom_equity'] if 'phantom_equity' in df.columns else 0) +
+                           (df['acciones_vesting'] if 'acciones_vesting' in df.columns else 0)).round(1)
     tabla_res['Salario'] = df['salario'].apply(lambda x: f"${x:,.0f}")
 
     if mostrar_proteccion and 'proteccion_antidilucion' in df.columns:
@@ -1484,17 +1485,17 @@ def tabla_completa(df, mostrar_proteccion):
     tabla_comp['Ordinarias %'] = df['acciones_ordinarias'].round(1)
     tabla_comp['Preferenciales %'] = df['acciones_preferenciales'].round(1)
     tabla_comp['Options %'] = df['stock_options'].round(1)
-    tabla_comp['Phantom %'] = df.get('phantom_equity', 0).round(1)
-    tabla_comp['Profit Share %'] = df.get('profit_sharing', 0).round(1)
-    tabla_comp['Warrants %'] = df.get('warrants', 0).round(1)
-    tabla_comp['Acc. Vesting %'] = df.get('acciones_vesting', 0).round(1)
+    tabla_comp['Phantom %'] = df['phantom_equity'].round(1) if 'phantom_equity' in df.columns else 0
+    tabla_comp['Profit Share %'] = df['profit_sharing'].round(1) if 'profit_sharing' in df.columns else 0
+    tabla_comp['Warrants %'] = df['warrants'].round(1) if 'warrants' in df.columns else 0
+    tabla_comp['Acc. Vesting %'] = df['acciones_vesting'].round(1) if 'acciones_vesting' in df.columns else 0
     tabla_comp['Total %'] = (df['acciones_ordinarias'] +
                             df['acciones_preferenciales'] +
                             df['stock_options'] +
-                            df.get('phantom_equity', 0) +
-                            df.get('profit_sharing', 0) +
-                            df.get('warrants', 0) +
-                            df.get('acciones_vesting', 0)).round(1)
+                            (df['phantom_equity'] if 'phantom_equity' in df.columns else 0) +
+                            (df['profit_sharing'] if 'profit_sharing' in df.columns else 0) +
+                            (df['warrants'] if 'warrants' in df.columns else 0) +
+                            (df['acciones_vesting'] if 'acciones_vesting' in df.columns else 0)).round(1)
     tabla_comp['Vesting'] = df['vesting_total'].astype(str) + 'a'
     tabla_comp['Cliff'] = df['cliff_period'].astype(str) + 'm'
     tabla_comp['Aportes'] = df['aporte_inicial'].apply(lambda x: f"${x:,.0f}")
@@ -1892,8 +1893,8 @@ def equity_analysis_section():
     total_ordinarias = df['acciones_ordinarias'].sum()
     total_preferenciales = df['acciones_preferenciales'].sum()
     total_options = df['stock_options'].sum()
-    total_phantom = df.get('phantom_equity', 0).sum()
-    total_vesting = df.get('acciones_vesting', 0).sum()
+    total_phantom = df['phantom_equity'].sum() if 'phantom_equity' in df.columns else 0
+    total_vesting = df['acciones_vesting'].sum() if 'acciones_vesting' in df.columns else 0
     total_equity = total_ordinarias + total_preferenciales + total_options + total_phantom + total_vesting
     
     # Métricas principales
@@ -1924,7 +1925,8 @@ def equity_analysis_section():
     with col_chart1:
         st.markdown("**📊 Distribución por Socio (Equity Total)**")
         df['equity_total'] = (df['acciones_ordinarias'] + df['acciones_preferenciales'] + df['stock_options'] +
-                             df.get('phantom_equity', 0) + df.get('acciones_vesting', 0))
+                             (df['phantom_equity'] if 'phantom_equity' in df.columns else 0) +
+                             (df['acciones_vesting'] if 'acciones_vesting' in df.columns else 0))
         fig_pie = px.pie(df, values='equity_total', names='nombre',
                         title="Distribución de Equity Total")
         st.plotly_chart(fig_pie, use_container_width=True)
