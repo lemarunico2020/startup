@@ -1,67 +1,67 @@
-# =€ Startup Equity Manager
+# Startup Equity Manager
 
-Herramienta educativa para la gestión y planificación de equity en startups colombianas, especializada en Sociedades por Acciones Simplificadas (SAS).
+Herramienta educativa para la gestiÃ³n y planificaciÃ³n de equity en startups colombianas, especializada en Sociedades por Acciones Simplificadas (SAS).
 
-## <¯ Características Principales
+## CaracterÃ­sticas Principales
 
-- **<è<ô Especializada en Colombia**: Adaptada para SAS según Ley 1258 de 2008
-- **=° Alternativas de Equity**: Phantom Equity, Profit Sharing, Warrants, Acciones con Vesting
-- **=Ê Calculadora Precisa**: Conversión entre porcentajes y número de acciones
-- **<× Planificación por Capas**: Fundadores, empleados, reserva futura
-- **=È Simulador de Dilución**: Proyección de rondas futuras de inversión
-- **– Normatividad Legal**: Referencias completas de legislación colombiana
+- **Especializada en Colombia**: Adaptada para SAS segÃºn Ley 1258 de 2008
+- **Alternativas de Equity**: Phantom Equity, Profit Sharing, Warrants, Acciones con Vesting
+- **Calculadora Precisa**: ConversiÃ³n entre porcentajes y nÃºmero de acciones
+- **PlanificaciÃ³n por Capas**: Fundadores, empleados, reserva futura
+- **Simulador de DiluciÃ³n**: ProyecciÃ³n de rondas futuras de inversiÃ³n
+- **Normatividad Legal**: Referencias completas de legislaciÃ³n colombiana
 
-## =à Funcionalidades
+## Funcionalidades
 
-### Configuración de Empresa
+### ConfiguraciÃ³n de Empresa
 - Estructura de capital autorizado vs suscrito
-- Cálculo de costos de registro SAS
-- Planificación de emisión por capas
+- CÃ¡lculo de costos de registro SAS
+- PlanificaciÃ³n de emisiÃ³n por capas
 
-### Gestión de Socios
+### GestiÃ³n de Socios
 - Formulario completo para fundadores y empleados
-- Alternativas colombianas de compensación
-- Protección antidilución y derechos pro-rata
+- Alternativas colombianas de compensaciÃ³n
+- ProtecciÃ³n antidiluciÃ³n y derechos pro-rata
 
-### Análisis y Reportes
+### AnÃ¡lisis y Reportes
 - Tablas resumen ejecutivas
-- Gráficos de distribución de equity
-- Simulador de dilución futura
-- Exportación de configuración
+- GrÃ¡ficos de distribuciÃ³n de equity
+- Simulador de diluciÃ³n futura
+- ExportaciÃ³n de configuraciÃ³n
 
-##   Aviso Legal
+## Â  Aviso Legal
 
-**Esta herramienta es únicamente para fines educativos y de planificación preliminar.**
+**Esta herramienta es Ãºnicamente para fines educativos y de planificaciÃ³n preliminar.**
 
-No constituye asesoría legal, contable o fiscal. Siempre consulta con profesionales especializados en derecho societario y tributario antes de tomar decisiones sobre la estructura de equity de tu empresa.
+No constituye asesorÃ­a legal, contable o fiscal. Siempre consulta con profesionales especializados en derecho societario y tributario antes de tomar decisiones sobre la estructura de equity de tu empresa.
 
-## =€ Cómo Usar
+## CÃ³mo Usar
 
-1. **Configura tu empresa** en la pestaña "Info Empresa"
+1. **Configura tu empresa** en la pestaÃ±a "Info Empresa"
 2. **Agrega socios** usando las alternativas colombianas apropiadas
-3. **Revisa los análisis** en las pestañas de resumen y análisis
-4. **Exporta tu configuración** antes de cerrar la aplicación
+3. **Revisa los anÃ¡lisis** en las pestaÃ±as de resumen y anÃ¡lisis
+4. **Exporta tu configuraciÃ³n** antes de cerrar la aplicaciÃ³n
 
-## =Ë Requisitos Técnicos
+## Requisitos TÃ©cnicos
 
 - Python 3.8+
 - Streamlit 1.28+
 - Pandas 2.0+
 - Plotly 5.15+
 
-## = Privacidad
+## Privacidad
 
-- Los datos se almacenan únicamente en tu navegador
-- No se envían datos a servidores externos
-- Exporta tu configuración antes de cerrar la aplicación
+- Los datos se almacenan Ãºnicamente en tu navegador
+- No se envÃ­an datos a servidores externos
+- Exporta tu configuraciÃ³n antes de cerrar la aplicaciÃ³n
 
-## =Ú Referencias Legales
+## Referencias Legales
 
 - Ley 1258 de 2008 (SAS)
 - Decreto 2020 de 2009
-- Código de Comercio
+- CÃ³digo de Comercio
 - Estatuto Tributario
 
 ---
 
-=¡ **Desarrollado para la comunidad startup colombiana**
+=Â¡ **Desarrollado para la comunidad startup colombiana**
