@@ -1,4 +1,4 @@
-{
+ifanio {
   "company_info": {
     "name": "TechStartup SAS",
     "stage": "MVP",
@@ -11,7 +11,7 @@
   },
   "socios": [
     {
-      "nombre": "Juan Grajales",
+      "nombre": "Juan Diaz",
       "rol": "CEO/Fundador Principal",
       "categoria": "Fundador Principal",
       "dedicacion": "Tiempo Completo (100%)",
@@ -32,7 +32,7 @@
       "notas": "Fundador principal con mayor equity por liderazgo y aporte inicial"
     },
     {
-      "nombre": "Leonel Marín",
+      "nombre": "Miguel Angel Marín",
       "rol": "Co-fundador",
       "categoria": "Co-fundador",
       "dedicacion": "Tiempo Completo (100%)",
@@ -53,7 +53,7 @@
       "notas": "Co-fundador estratégico"
     },
     {
-      "nombre": "Carlos Restrepo",
+      "nombre": "Carlos Yepes",
       "rol": "CTO",
       "categoria": "Co-fundador",
       "dedicacion": "Tiempo Completo (100%)",
@@ -74,7 +74,7 @@
       "notas": "CTO con equity elevado por criticidad del rol técnico"
     },
     {
-      "nombre": "Luis K",
+      "nombre": "Luis Diaz",
       "rol": "CMO",
       "categoria": "Co-fundador",
       "dedicacion": "Tiempo Parcial (75%)",
@@ -95,7 +95,7 @@
       "notas": "Tiempo parcial inicialmente, con plan de dedicación completa"
     },
     {
-      "nombre": "Tatiana Vera",
+      "nombre": "Faustino Valderrama",
       "rol": "VP Marketing",
       "categoria": "Early Employee",
       "dedicacion": "Tiempo Parcial (50%)",
@@ -116,7 +116,7 @@
       "notas": "Primera empleada clave, con potencial de crecimiento"
     },
     {
-      "nombre": "Silvana García",
+      "nombre": "Silvio Andrade",
       "rol": "Director Legal",
       "categoria": "Advisor",
       "dedicacion": "Consultoría",
